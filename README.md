@@ -1,5 +1,5 @@
 ## lucene_information_retrieval
-Implement Retrieval Functions and Evaluations based on Lucene
+Implemented Retrieval Functions and Evaluations based on Lucene
 
 | Ranking Function | MAP | P@10 | MRR | NDCG@10 |
 | ------ | ------ | ------ | ------ | ------ | 
