@@ -77,9 +77,10 @@ protected float score(BasicStats stats, float termFreq, float docLength){
 ###### Language Model
 ####
 ```Java
- protected float score(BasicStats stats, float termFreq, float docLength){
-        double result = getTFDocument(stats, termFreq, docLength) * getIDFDocument(stats) * getTFQuery(stats);
-        return (float)result;
+ protected float score(BasicStats stats, float termFreq, float docLength) {
+        double score = Math.log10(getSmoothing(stats, termFreq, docLength) /
+                (getAlpha(stats, termFreq, docLength) * model.computeProbability(stats)));
+        return (float) score;
     }
 ```
 ###### Jelinek-Mercer Smoothing
